@@ -42,6 +42,11 @@ Author
   * [Wizlab.it](https://www.wizlab.it/)
 
 
+Contributors
+------------
+  * [markalston](https://github.com/markalston)
+
+
 License
 -------
 This program is free software: you can redistribute it and/or modify

@@ -1,8 +1,8 @@
 /**
  * @package Joymap - Joystick and joypad mapper
  * @author WizLab.it
- * @version 0.7.1
- * @date 2017-08-26
+ * @version 0.7.2
+ * @date 2020-02-24
  *
  * How to compile:
  * $ gcc joymap.c -lxdo -o joymap
@@ -29,7 +29,7 @@
 #include <xdo.h>
 #include <fcntl.h>
 
-#define VERSION "0.7.1"
+#define VERSION "0.7.2"
 #define MAX_AXES 6
 #define MAX_BUTTONS 26
 #define MAP_MAX_STRING_LENGTH 20

@@ -31,8 +31,8 @@
 
 #define VERSION "0.7.1"
 #define MAX_AXES 6
-#define MAX_BUTTONS 16
-#define MAP_MAX_STRING_LENGTH 10
+#define MAX_BUTTONS 26
+#define MAP_MAX_STRING_LENGTH 20
 #define DEVICE_MAX_STRING_LENGTH 40
 #define XDO_KEYSEQUENCE_DELAY 12000
 #define JS_EVENT_BUTTON 0x01
@@ -69,12 +69,12 @@ int main (int argc, char **argv) {
   for(i=0; i<MAX_BUTTONS; i++) buttonCounters[i] = 0;
 
   //parse arguments
-  while((c = getopt(argc, argv, "0:1:2:3:4:5:6:7:8:9:A:B:C:D:E:F:d:p:q:r:s:t:u:hvx")) != -1) {
+  while((c = getopt(argc, argv, "0:1:2:3:4:5:6:7:8:9:A:B:C:D:E:F:G:H:I:J:K:L:M:N:O:P:d:p:q:r:s:t:u:hvx")) != -1) {
     switch (c) {
       //Usage
       case 'h':
         printf("  Usage: joymap [OPTIONS]\n");
-        printf("    -[0-1A-F]\t\tSet the button character map (i.e. \"-0 X\" map button 0 to character X)\n");
+        printf("    -[0-1A-P]\t\tSet the button character map (i.e. \"-0 X\" map button 0 to character X). Button A = Button 10, Button P = Button 25\n");
         printf("    -[pqrstu]\t\tAxis 0/1/2/3/4/5, data set as \"up/left down/right\" (i.e. '-r \"Up Down\"' map up/down arrow keys to axis 2)\n");
         printf("    -d\t\t\tDevice (i.e. /dev/input/js0)\n");
         printf("    -x\t\t\tOnly print raw data (for debug purposes)\n");
@@ -121,8 +121,11 @@ int main (int argc, char **argv) {
       //Buttons
       case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7':
       case '8': case '9': case 'A': case 'B': case 'C': case 'D': case 'E': case 'F':
+      case 'G': case 'H': case 'I': case 'J': case 'K': case 'L': case 'M': case 'N':
+      case 'O': case 'P': 	
         if((c >= '0') && (c <= '9')) c = c - '0';
-        else if((c >= 'A') && (c <= 'F')) c = c - 'A' + 10;
+        else if((c >= 'A') && (c <= 'I')) c = c - 'A' + 10;
+	else if((c >= 'J') && (c <= 'P')) c = c - 'J' + 20;
         else break;
         strncpy(buttons[c], optarg, MAP_MAX_STRING_LENGTH);
         break;

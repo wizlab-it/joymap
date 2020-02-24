@@ -4,7 +4,7 @@ Joymap helps you to configure a joystick or joypad on Linux to make it to work i
 
 Many old games available online (i.e. the ones from [archive.org](https://archive.org/) - MS-DOS games, Classic PC Games, SEGA games), are controlled using the keyboard.
 
-With joymap you can map very easily keyboard keys to buttons and axes of the joypad. Joymaps supports up to **6 axes** and **16 buttons** devices.
+With joymap you can map very easily keyboard keys to buttons and axes of the joypad. Joymaps supports up to **6 axes** and **25 buttons** devices.
 
 See the full project page at [Wizlab.it](https://www.wizlab.it/code/joymap.html)
 
